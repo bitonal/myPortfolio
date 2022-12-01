@@ -1,0 +1,26 @@
+<div id="login-box">
+	<div class="left inputs ">
+	  <h5>Login</h5>
+	<form (ngSubmit)="onSubmit()" #myForm ="ngForm">
+        <input type="text" name="email" placeholder="E-mail" ngModel  required email #Uemail="ngModel" />
+		<div>
+			<small *ngIf="Uemail.invalid && Uemail.touched" > Email is required</small>
+		</div>
+        <input type="password" name="password" placeholder="Password" ngModel required touched #Upass1="ngModel" />
+		<div>
+			<small *ngIf="Upass1.invalid && Upass1.touched" > Password is required</small>
+			
+		</div>
+        <input type="submit" name="signup_submit" class="btn btn-success" [disabled]="!myForm.valid" value="Login " />
+		<input type="submit" name="signup_submit2" class="btn btn-success"   routerLink="../home" value=" home " />
+    </form>
+	</div>
+	<div class="right">
+		<h5> Welcome to Portfolio</h5><br>
+	  
+	  <button class="social-signin facebook">Log in with facebook</button>
+	  <button class="social-signin twitter">Log in with Twitter</button>
+	  <button class="social-signin google">Log in with GitHub</button>
+	</div>
+	<div class="or">OR</div>
+</div>
